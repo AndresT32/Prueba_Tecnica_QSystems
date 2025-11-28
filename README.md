@@ -234,4 +234,69 @@ Para probar el ejercicio en **consola**, utiliza Node.js ejecutando el archivo:
 node filtrado.js
 ```
 
+# **Ejercicio 06 – Mini API Mock**
+
+## 📌 Descripción
+
+Este ejercicio implementa una **mini API simulada** usando JavaScript y un archivo JSON local.
+El objetivo es cargar datos desde un archivo externo y realizar búsquedas eficientes por ID, retornando un mensaje con el nombre y precio del producto.
+
+---
+
+## 📁 Estructura del Proyecto
+
+```
+Ejercicio_06/
+│
+├── data/
+│   └── productos.json
+│
+└── js/
+    └── apiMock.js
+```
+
+---
+
+## 📦 Archivo JSON (`data/productos.json`)
+
+Contiene un listado básico de productos:
+
+```json
+[
+  { "id": 1, "nombre": "Producto A", "precio": 5000 },
+  { "id": 2, "nombre": "Producto B", "precio": 7500 }
+]
+```
+
+---
+
+## 🧠 Lógica Implementada (`js/apiMock.js`)
+
+### 🔹 `cargarProductos()`
+
+Función encargada de leer el archivo JSON local.
+
+* Usa `fs/promises` para la lectura asincrónica.
+* Convierte el contenido en un arreglo JS.
+* Implementa manejo de errores para evitar fallos si el archivo no existe o está mal formado.
+
+### 🔹 `buscarProductoPorId(id)`
+
+Realiza la búsqueda del producto solicitado.
+
+* Usa `.find()` para hacer la búsqueda de forma eficiente.
+* Retorna un mensaje como:
+  **"El Producto B cuesta 7500"**
+* Si no existe el producto, retorna:
+  **"Producto con ID X no encontrado"**
+
+---
+
+## ▶️ Ejecución
+
+Dentro de la carpeta del ejercicio:
+
+```bash
+node js/apiMock.js
+```
 
