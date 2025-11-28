@@ -196,3 +196,42 @@ Se incluyen validaciones estrictas para asegurar que solo se procesen horas y mi
 ```bash
 node hora12h.js
 ```
+
+# Ejercicio_05 – Filtrado múltiple de productos
+
+Este ejercicio implementa un algoritmo de filtrado de productos por **rango de precio** y **categoría opcional** utilizando **JavaScript**.
+
+---
+
+## 📌 Descripción
+
+- Se utiliza una **clase transitoria (`ProductosDTO`)** que representa un filtro temporal para los productos.  
+- La clase recibe los valores de **precio mínimo y máximo obligatorios** y una categoría opcional.  
+- Incluye **validaciones** para asegurar que los precios sean correctos y que el mínimo no sea mayor que el máximo.  
+- La función `filtrarProductos` aplica el filtro a un array de productos, devolviendo únicamente los que cumplen los criterios.
+
+---
+
+## 🔹 Manejo de errores
+
+- Se implementa un manejo de errores **centralizado** mediante una función `ejecutarFiltros`.  
+- Esto permite capturar y mostrar cualquier error generado al crear filtros o aplicar el filtrado, como:
+  - Precios no proporcionados.
+  - Precio mínimo mayor que el máximo.
+
+---
+
+## 💡 Conceptos aplicados
+
+- **Clase transitoria**: objeto temporal para pasar parámetros de filtro.  
+- **Filtrado avanzado**: combinando condiciones de precio y categoría.  
+- **Manejo seguro de errores**: evita que un fallo detenga la ejecución de todos los casos de prueba.
+## 🔹 Ejecución
+
+Para probar el ejercicio en **consola**, utiliza Node.js ejecutando el archivo:
+
+```bash
+node filtrado.js
+```
+
+
