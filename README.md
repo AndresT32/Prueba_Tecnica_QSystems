@@ -146,3 +146,53 @@ Esta carpeta contiene una solución en **JavaScript puro** para transformar un a
 ```bash
 node promedio.js
 ```
+# Ejercicio_04 – Conversión de hora 24h a 12h
+
+Este ejercicio en **JavaScript** recibe una hora en formato 24h (`"HH:MM"`) y la convierte a **formato 12h con AM/PM**, mostrando el resultado en consola.  
+
+Se incluyen validaciones estrictas para asegurar que solo se procesen horas y minutos válidos.
+
+---
+
+## 🧩 Tecnologías utilizadas
+- **JavaScript Vanilla** para lógica y validación de datos.  
+- **Node.js** para ejecutar el archivo en consola.  
+
+---
+
+## 🧠 Conceptos aplicados
+
+1. **Parsing**  
+   - Se recibe un string `"HH:MM"` y se separa en hora y minutos usando `split(':')`.  
+   - Después se convierten a números con `Number()` para poder operar matemáticamente.
+
+2. **Manipulación de strings**  
+   - Se reconstruye la hora en formato 12h usando template literals:  
+     ```js
+     `${hora12}:${minutosStr} ${periodo}`
+     ```
+   - Combina la hora calculada, los minutos originales y el indicador AM/PM en un string final.
+
+3. **Condiciones complejas**  
+   - Se valida que la hora esté entre `0` y `23` y los minutos entre `0` y `59`.  
+   - Cualquier valor fuera de rango lanza un error:  
+     ```js
+     if (isNaN(hora) || isNaN(minutos) || hora < 0 || hora > 23 || minutos < 0 || minutos > 59)
+     ```
+   - Se usa lógica condicional para determinar AM/PM y la conversión a hora 12h:  
+     ```js
+     const periodo = hora >= 12 ? 'PM' : 'AM';
+     const hora12 = hora % 12 === 0 ? 12 : hora % 12;
+     ```
+
+---
+
+## 🚀 Cómo ejecutar
+
+1. Abrir **VS Code** en la carpeta del ejercicio.  
+2. Abrir la terminal integrada.  
+3. Ejecutar el archivo:
+
+```bash
+node hora12h.js
+```
