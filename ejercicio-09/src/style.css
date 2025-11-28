@@ -1,0 +1,112 @@
+/* ============================================================
+   VARIABLES DE TEMA
+   Definen la identidad visual del sistema (colores y estilos).
+   Facilitan escalabilidad y cambios de diseño en un solo lugar.
+   ============================================================ */
+:root {
+  --primary: #007bff;       /* Azul hospital: botones y acentos */
+  --primary-dark: #005dc1;  /* Variante oscura para hover */
+  --accent: #00c896;        /* Verde biomédico para etiquetas */
+  --bg: #f3f7fb;            /* Fondo claro tipo UI clínica */
+  --card: #ffffff;          /* Fondo para tarjetas */
+}
+
+/* CONFIGURACIÓN GLOBAL*/
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Segoe UI", sans-serif; /* Fuente legible y moderna */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* COMPONENTES GENERALES*/
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;      /* Bordes suaves */
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+/* Inputs y formularios */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d7e0;
+}
+
+/* Botón principal */
+.button {
+  padding: 10px 16px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* LISTA DE ELEMENTOS */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Etiquetas tipo categoría */
+.badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Imagen del detalle de equipo */
+.detail-img {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+/* =======================
+   BOTÓN PEQUEÑO
+   ======================= */
+.button-small {
+  padding: 6px 10px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+
+.button-small:hover {
+  background: var(--primary-dark);
+}
+
+.button-small svg {
+  width: 14px;
+  height: 14px;
+}
