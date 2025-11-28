@@ -1,0 +1,164 @@
+/* VARIABLES GLOBALES (THEME)
+   - Definen paleta y tokens reutilizables
+   - Cambiarlas centraliza el rediseño */
+:root {
+  /* Colores primarios */
+  --primary: #4e73df;         /* color principal del branding */
+  --primary-dark: #2e59d9;    /* hover/acciones activas */
+  --danger: #e74a3b;          /* acciones destructivas (eliminar) */
+
+  /* Fondo y tarjetas */
+  --bg: #eef1f7;              /* fondo de la página (suave) */
+  --card: #ffffff;            /* fondo de las cards / contenedores */
+
+  /* Tipografía / texto */
+  --text: #333;               /* color principal del texto */
+
+  /* Sombra global */
+  --shadow: rgba(0,0,0,0.12);
+}
+
+/*  GLOBALS / LAYOUT */
+body {
+  background: var(--bg);
+  font-family: "Segoe UI", sans-serif; /* fuente legible en UI */
+  display: flex;
+  justify-content: center;            /* centra el contenedor principal */
+  padding: 20px;                       /* separación respecto al viewport */
+  margin: 0;                           /* reset básico */
+  color: var(--text);
+}
+
+/* Contenedor principal: ancho máximo y centrado */
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+/*  CARDS (componentes)
+   - Usadas para secciones (crear, actualizar, filtros, etc.)*/
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;                 /* bordes suaves para UI moderna */
+  margin-bottom: 20px;
+  box-shadow: 0px 6px 20px var(--shadow);
+}
+
+/*  GRID: filas de inputs + botón
+   - Reutilizable: 2 campos + botón
+   - Usa grid para mantener alineación en distintos anchos */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto; /* 2 columnas flexibles + botón */
+  gap: 12px;
+}
+
+/* Inputs y selects: apariencia consistente y accesible */
+input, select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;              /* incluye padding en ancho */
+}
+
+/* BOTONES (estilo base)
+   - Transiciones suaves para hover
+   - .danger para acciones destructivas*/
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.18s ease, transform 0.08s ease;
+}
+
+/* Estado hover: contraste ligeramente más oscuro */
+button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Variante para eliminar / peligro */
+button.danger {
+  background: var(--danger);
+}
+button.danger:hover {
+  filter: brightness(0.95);
+}
+
+/* Mensajes (feedback) */
+.message {
+  margin-top: 10px;
+  font-weight: bold;
+  min-height: 1.2em; /* evita saltos de layout cuando se limpian mensajes */
+}
+
+/*  TARJETAS DE TAREA
+   - Diseño de cada item en la lista
+   - Badge para indicar estado visualmente */
+.task {
+  background: #fff;
+  border-left: 6px solid var(--primary);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0px 4px 10px var(--shadow);
+}
+
+/* Badge de estado (visual y semántica) */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  margin-top: 8px;
+}
+
+/* Clases de estado: semánticas para mantenimiento y testing */
+.pending { background: #e67e22; }    /* pendiente: naranja */
+.progress { background: #f1c40f; color: black; } /* en progreso: amarillo */
+.completed { background: #2ecc71; }  /* completada: verde */
+
+/* CONTADORES (estadísticas)*/
+.counters span {
+  display: inline-block;
+  margin-right: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+
+/*  RESPONSIVE - BREAKPOINTS*/
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr; /* apila inputs + botón verticalmente */
+  }
+
+  .task { padding: 12px; }
+  input, select, button { font-size: 15px; }
+}
+
+/* ACCESIBILIDAD Y PERFORMANCE */
+button:focus, input:focus, select:focus {
+  outline: 3px solid rgba(78,115,223,0.18);
+  outline-offset: 2px;
+}
+
+/* Evita sombras pesadas en dispositivos lentos */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
