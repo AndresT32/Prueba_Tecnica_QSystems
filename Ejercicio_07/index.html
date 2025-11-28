@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <main class="container">
+    <h1>Gestión de Tareas</h1>
+
+    <!-- Crear -->
+    <section class="card">
+      <h2>Crear tarea</h2>
+      <div class="row">
+        <input id="titleInput" placeholder="Título">
+        <input id="descInput" placeholder="Descripción">
+        <!-- Selector de estado al crear -->
+        <select id="createStatus" title="Estado inicial de la tarea">
+          <option value="Pendiente">Pendiente</option>
+          <option value="En progreso">En progreso</option>
+          <option value="Completada">Completada</option>
+        </select>
+        <button id="btnAdd">Agregar</button>
+      </div>
+      <p id="msgCreate" class="message"></p>
+    </section>
+
+    <!-- Actualizar -->
+    <section class="card">
+      <h2>Actualizar estado</h2>
+      <div class="row">
+        <input id="updateId" placeholder="ID">
+        <select id="updateStatus">
+          <option value="Pendiente">Pendiente</option>
+          <option value="En progreso">En progreso</option>
+          <option value="Completada">Completada</option>
+        </select>
+        <button id="btnUpdate">Actualizar</button>
+      </div>
+      <p id="msgUpdate" class="message"></p>
+    </section>
+
+    <!-- Eliminar -->
+    <section class="card">
+      <h2>Eliminar tarea</h2>
+      <div class="row">
+        <input id="deleteId" placeholder="ID">
+        <button id="btnDelete" class="danger">Eliminar</button>
+      </div>
+      <p id="msgDelete" class="message"></p>
+    </section>
+
+    <!-- Filtros -->
+    <section class="card">
+      <h2>Filtros</h2>
+      <div class="row">
+        <input id="searchId" placeholder="Buscar por ID">
+        <select id="filterStatus">
+          <option value="all">Todos</option>
+          <option value="Pendiente">Pendiente</option>
+          <option value="En progreso">En progreso</option>
+          <option value="Completada">Completada</option>
+        </select>
+        <button id="btnFilter">Filtrar</button>
+      </div>
+
+      <div class="counters">
+        <span id="countTotal"></span>
+        <span id="countPend"></span>
+        <span id="countProg"></span>
+        <span id="countComp"></span>
+      </div>
+    </section>
+
+    <section id="taskList" class="task-list"></section>
+  </main>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

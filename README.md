@@ -300,3 +300,95 @@ Dentro de la carpeta del ejercicio:
 node js/apiMock.js
 ```
 
+# 📄 **Ejercicio 07 - Gestión de tareas**
+
+
+Esta carpeta implementa un Aplicativo web sencilla hecha en **HTML, CSS y JavaScript**, que permite gestionar tareas (crear, actualizar, eliminar y filtrar) con almacenamiento local. El sistema funciona abriendo únicamente el archivo `index.html`.
+
+---
+
+## ¿Qué hace el software?
+
+- Crea tareas con: título, descripción y estado inicial.
+- Genera IDs automáticos (T001, T002…).
+- Actualiza el estado de una tarea mediante su ID.
+- Elimina tareas por ID.
+- Filtra por ID o estado.
+- Muestra contadores: total, pendientes, en progreso, completadas.
+- Guarda toda la información en **localStorage usando JSON**, así los datos no se pierden al cerrar el navegador.
+
+---
+
+## ¿Cómo está estructurado?
+
+```
+
+/proyecto
+│
+├── index.html          → Estructura principal de la interfaz
+│
+├── css/
+│   └── styles.css      → Estilos, diseño visual y layout responsivo
+│
+└── js/
+    ├── store.js        → Gestión de datos:
+    │                     - Arreglo de tareas
+    │                     - Generación de IDs
+    │                     - Persistencia con JSON + localStorage
+    │
+    ├── ui.js           → Capa visual:
+    │                     - Renderizado de tareas en pantalla
+    │                     - Contadores
+    │                     - Mensajes y limpieza de inputs
+    │
+    └── app.js          → Lógica central:
+                          - Eventos de los botones
+                          - Validaciones
+                          - Conexión entre store.js y ui.js
+
+
+```
+
+El JavaScript está dividido en tres archivos para separar responsabilidades:
+
+- **store.js** → gestiona el arreglo de tareas, genera IDs, guarda y carga desde localStorage.  
+- **ui.js** → todo lo visual: mostrar tareas, limpiar inputs, mensajes, contadores.  
+- **app.js** → conecta la UI con la lógica; recibe eventos de los botones y usa `store.js` y `ui.js`.
+
+Esta separación hace el código más ordenado, mantenible y fácil de entender.
+
+---
+
+## ¿Cómo funciona la lógica?
+
+1. **Crear tarea:**  
+   - Se leen los datos del formulario.  
+   - Se genera un ID incremental.  
+   - Se guarda la tarea en un arreglo y en localStorage (JSON).  
+   - Se vuelve a renderizar la lista.
+
+2. **Actualizar tarea:**  
+   - Se busca la tarea por ID.  
+   - Se cambia su estado.  
+   - Se guarda y se actualiza la UI.
+
+3. **Eliminar tarea:**  
+   - Se elimina por ID y se actualiza storage y pantalla.
+
+4. **Filtros:**  
+   - Se toma la lista completa.  
+   - Se aplica filtro por ID, estado o ambos.  
+   - Se muestra el resultado sin alterar los datos originales.
+
+5. **Contadores:**  
+   - Se recalculan cada vez que cambia la lista o los filtros.
+
+El estado completo de la aplicación siempre está sincronizado con localStorage mediante `JSON.stringify()` y `JSON.parse()`.
+
+---
+
+## ¿Cómo se ejecuta?
+
+1. Descargar el proyecto.  
+2. Abrir `index.html` en el navegador.  
+3. No requiere servidor ni configuración adicional.
