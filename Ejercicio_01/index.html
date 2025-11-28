@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BioSalud | Portal de Gestión Biomédica</title>
+
+    <!-- Iconos y fuentes utilizadas -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+    <!-- HEADER (branding principal) -->
+<header class="header">
+    <div class="header__group">
+        <h1 class="header__client">BioSalud</h1>
+        <span class="header__subtitle">Sistema Integral de Gestión Biomédica</span>
+    </div>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="header__right">
+        <img src="assets/logo_Qsystem.jpg" alt="Logo QSystem" class="header__logo">
+        <span class="header__powered">Desarrollado por QSystem</span>
+    </div>
+</header>
+
+
+    <!-- HERO SECTION con CTA -->
+    <section class="hero">
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
+            <h2 class="hero__title">Bienvenido al Portal BioSalud</h2>
+            <p class="hero__text">
+                Administre inventario biomédico, registre alarmas, consulte equipos y gestione mantenimientos.
+            </p>
+
+            <div class="hero__cta">
+                <a href="#" class="btn btn--primary">
+                    <span class="material-icons-outlined btn__icon">login</span>
+                    Ingresar al sistema
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCIONES PRINCIPALES: -->
+    <section class="actions">
+        <h2 class="actions__title">Acciones rápidas</h2>
+
+        <!-- Grid 3x2 en escritorio -->
+        <div class="actions__grid">
+
+            <!-- CARD - Agregar Equipo -->
+            <a class="action-card">
+                <span class="material-icons-outlined action-card__icon">add_circle</span>
+                <h3 class="action-card__title">Agregar Equipo</h3>
+                <p class="action-card__desc">Registrar un nuevo equipo biomédico.</p>
+            </a>
+
+            <!-- CARD - Buscar Equipo -->
+            <a class="action-card">
+                <span class="material-icons-outlined action-card__icon">search</span>
+                <h3 class="action-card__title">Buscar Equipo</h3>
+                <p class="action-card__desc">Consultar por código, QR o serie.</p>
+            </a>
+            <!-- CARD - Registrar Alarma -->
+            <a class="action-card">
+                <span class="material-icons-outlined action-card__icon">warning</span>
+                <h3 class="action-card__title">Registrar Alarma</h3>
+                <p class="action-card__desc">Crear alertas de falla o mantenimiento.</p>
+            </a>
+
+            <!-- CARD - Inventario -->
+            <a class="action-card">
+                <span class="material-icons-outlined action-card__icon">inventory_2</span>
+                <h3 class="action-card__title">Inventario</h3>
+                <p class="action-card__desc">Visualizar todos los equipos.</p>
+            </a>
+
+            <!-- CARD - Reportes -->
+            <a class="action-card">
+                <span class="material-icons-outlined action-card__icon">insights</span>
+                <h3 class="action-card__title">Reportes</h3>
+                <p class="action-card__desc">Indicadores y estadísticas.</p>
+            </a>
+
+            <!-- CARD - Mantenimientos -->
+            <a class="action-card">
+                <span class="material-icons-outlined action-card__icon">build_circle</span>
+                <h3 class="action-card__title">Mantenimientos</h3>
+                <p class="action-card__desc">Gestión preventiva y correctiva.</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>BioSalud © 2025 — Plataforma desarrollada por QSystem Colombia</p>
+    </footer>
+
+</body>
+
+</html>
