@@ -1,0 +1,97 @@
+/* -------- Variables -------- */
+:root {
+  --blue: #0054A6;
+  --gray: #2E2E2E;
+  --light: #F4F6F8;
+  --white: #fff;
+}
+
+/* -------- Layout -------- */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--light);
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--blue);
+}
+
+/* -------- Input -------- */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.task-input button {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.task-input button:hover {
+  background: #003F7E;
+}
+
+/* -------- Lista tarea -------- */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--light);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.btn-complete {
+  background: #4CAF50;
+  color: var(--white);
+}
+
+.btn-delete {
+  background: #E53935;
+  color: var(--white);
+}
