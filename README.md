@@ -56,3 +56,70 @@ Ejemplo de breakpoint utilizado:
   }
 }
 ```
+# Gestor de Tareas – Interacción con DOM (Ejercicio_2)
+
+Esta carpeta contiene una implementación sencilla y escalable de un **gestor dinámico de tareas**, construido únicamente con JavaScript nativo. El objetivo es presentar una solución clara, organizada y funcional que permita manipular el DOM de forma eficiente sin usar frameworks externos.
+
+---
+
+## 🧩 Tecnologías utilizadas
+- **HTML5** para la estructura base.
+- **CSS3** para la disposición y estilos de los elementos.
+- **JavaScript Vanilla** para la lógica, manejo de estado y renderizado..
+- **Módulo utilitario** para creación limpia de elementos dinámicos.
+
+---
+
+## 📁 Estructura del proyecto
+
+### Entrada y acciones principales
+La interfaz está compuesta por:
+- Un campo de texto para capturar la tarea.
+- Un botón para agregar nuevos elementos.
+- Listado dinámico donde se renderizan las tareas creadas.
+
+Toda la interacción se realiza mediante eventos de clic y teclas, manteniendo una experiencia fluida.
+
+### Lógica en JavaScript
+El archivo app.js gestiona toda la interacción del ejercicio utilizando JavaScript Vanilla:
+- Un arreglo tasks funciona como estado centralizado para almacenar las tareas.
+- Renderizado dinámico del listado, actualizando la interfaz según los cambios en el estado.
+- Función utilitaria interna createElement() para crear nodos del DOM de forma más limpia.
+- Funciones independientes y puras para:  
+  - Agregar tareas.  
+  - Marcar como completadas.
+  - Eliminar tareas.
+  - Renderizar el listado completo sin recargar la página.
+- Sin uso de frameworks ni módulos externos, garantizando compatibilidad con ejecución local.
+
+### Comportamiento dinámico
+Cada elemento visual (botón, texto e indicadores) se genera en tiempo real según el estado interno.  
+Al modificar una tarea, el DOM se vuelve a dibujar de forma controlada mediante una única función de renderizado.
+
+---
+
+## 📱 Responsividad
+Los estilos están organizados para adaptarse correctamente a diferentes anchos manteniendo:
+- Buena separación entre elementos.
+- Tipografía legible.
+- Accesibilidad y usabilidad en móviles.
+
+---
+
+## 🧠 Conceptos aplicados
+- **Control de estado local** mediante un arreglo centralizado.
+- **Manipulación estructurada del DOM** a través de JavaScript.
+- **Delegación de eventos directa** sobre elementos generados dinámicamente.
+- **Renderizado dinámico** sin uso de frameworks.
+- **Código modular**, facilitando mantenibilidad y extensibilidad futura.
+
+---
+
+## ✨ Resultado
+El usuario puede:
+- Agregar tareas.
+- Completar tareas.
+- Eliminar tareas.
+- Ver los cambios reflejados inmediatamente gracias al renderizado dinámico.
+
+---
