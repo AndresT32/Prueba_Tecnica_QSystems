@@ -123,3 +123,26 @@ El usuario puede:
 - Ver los cambios reflejados inmediatamente gracias al renderizado dinámico.
 
 ---
+# Ejercicio_03 – Cálculo de Promedios
+
+Esta carpeta contiene una solución en **JavaScript puro** para transformar un arreglo de estudiantes con sus notas y calcular el promedio de cada uno.  
+
+---
+
+## 🧩 Qué se usó
+- **JavaScript Vanilla** para lógica y cálculo de promedios.  
+- **Métodos de arrays**: `map()` para transformar el arreglo y `reduce()` para sumar notas.  
+- **Node.js** para ejecutar el archivo en consola.  
+- **toFixed(2)** para redondear los promedios a 2 decimales.  
+
+---
+
+## 🚀 Cómo ejecutar
+
+1. Abrir **VS Code** en la carpeta del ejercicio.  
+2. Abrir terminal integrada.  
+3. Ejecutar:
+
+```bash
+node promedio.js
+```
